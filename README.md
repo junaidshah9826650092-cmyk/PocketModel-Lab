@@ -1,84 +1,45 @@
-<p align="center">
-  <img src="assets/banner.svg" alt="PocketAI Banner" width="100%"/>
-</p>
+# PocketModel-Lab
 
-<h1 align="center">
-  <img src="assets/icon.svg" alt="PocketAI" width="64"/>
-  <br/>PocketAI
-</h1>
-<p align="center"><b>Phone-ready GGUF language models — compressed for speed, built for mobile.</b></p>
+Phone-ready GGUF models + the Colab pipeline that builds them.
+Small student models (Qwen3-0.6B / 1.7B) are imatrix-quantized into the 300 MB - 1.1 GB band so real phones can run them. The 27B teacher (Titan) build needs a GPU session — see the main notebook.
 
-<p align="center">
-  <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases"><img src="https://img.shields.io/github/release/junaidshah9826650092-cmyk/PocketModel-Lab?color=%2338bdf8&label=Latest%20Release" alt="Release"/></a>
-  <a href="https://huggingface.co/junaiidshah78634/PocketModel-Lab"><img src="https://img.shields.io/badge/HuggingFace-Model-%23a855f7?logo=huggingface" alt="HF Model"/></a>
-  <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/License-Apache%202.0-%2322c55e" alt="License"/></a>
-  <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/issues"><img src="https://img.shields.io/github/issues/junaidshah9826650092-cmyk/PocketModel-Lab?color=%23f472b6" alt="Issues"/></a>
-</p>
-
----
-
-## 📱 Pick Your Build
-
-| Build | Phone | Base | Quant | Size | RAM |
+## Build names - pick by your phone's RAM
+| Build | Phone class | Base | Quant | Size* | Needs RAM |
 |---|---|---|---|---|---|
-| **PocketAI-Kilo** | Budget (2–3 GB) | Ndx-0.6B | IQ2_M | ~0.30 GB | ~2 GB |
-| **PocketAI-Kilo-HD** | Low-end (2–4 GB) | Ndx-0.6B | Q3_K_M | ~0.38 GB | ~2.5 GB |
-| **PocketAI-Mega** | Mid (4–6 GB) | Ndx-0.6B | Q4_K_M | ~0.44 GB | ~3 GB |
-| **PocketAI-Giga** | Upper-mid (6–8 GB) | Ndx-1.7B | IQ2_M | ~0.75 GB | ~4 GB |
-| **PocketAI-Giga-HD** | Flagship (8 GB+) | Ndx-1.7B | Q4_K_M | ~1.16 GB | ~5 GB |
-| **PocketAI-Titan** | Emulator / PC | 27B Teacher | IQ2_M | ~10–12 GB | 12 GB+ |
+| **PocketModel-Kilo** | budget (2-3 GB) | qwen3-0.6B | IQ2_M | ~0.28 GB | ~2 GB |
+| **PocketModel-Kilo-HD** | low-end (2-4 GB) | qwen3-0.6B | Q3_K_M | ~0.36 GB | ~2.5 GB |
+| **PocketModel-Mega** | mid (4-6 GB) | qwen3-0.6B | Q4_K_M | ~0.45 GB | ~3 GB |
+| **PocketModel-Giga** | upper-mid (6-8 GB) | qwen3-1.7B | IQ2_M | ~0.75 GB | ~4 GB |
+| **PocketModel-Giga-HD** | flagship (8 GB+) | qwen3-1.7B | Q4_K_M | ~1.05 GB | ~5 GB |
+| **PocketModel-Titan** | emulator / PC | 27B teacher | IQ2_M | ~10-12 GB | 12 GB+ (needs GPU to build) |
 
----
+*Confirmed sizes + quality live in [MODELS.md](MODELS.md) after a pipeline run.
 
-## 🚀 Direct Download
+## Direct download - works straight from a phone browser
+Tap the link in MODELS.md, or curl. `releases/latest/download` always points at the newest build:
 
-No terminal. No commands. Just tap the link on your phone.
+```sh
+curl -L -o PocketModel-Kilo.gguf \
+  https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/latest/download/PocketModel-Kilo-qwen3-0.6B-IQ2_M.gguf
+```
 
-All assets in GitHub Release **`pocket-v1.0`**:
+Termux shortcut: `sh scripts/fetch-model.sh kilo`
 
-- [PocketAI-Kilo-Ndx-IQ2_M.gguf](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-Ndx-IQ2_M.gguf)
-- [PocketAI-KiloHD-Ndx-Q3_K_M.gguf](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-KiloHD-Ndx-Q3_K_M.gguf)
-- [PocketAI-Mega-Ndx-Q4_K_M.gguf](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-Ndx-Q4_K_M.gguf)
-- [PocketAI-Giga-Ndx-IQ2_M.gguf](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-Ndx-IQ2_M.gguf)
-- [PocketAI-GigaHD-Ndx-Q4_K_M.gguf](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-Ndx-Q4_K_M.gguf)
-
-> **Tip:** Use `releases/latest/download/` to always grab the newest build.
-
----
-
-## 📲 Run on Your Phone
-
-| App | Platform | How |
+## Run it in a local app
+| App | Platform | Guide |
 |---|---|---|
-| **PocketPal AI** | Android / iOS | Settings → Local Models → + → Load from phone → pick `.gguf` |
-| **ChatterUI** | Android | Manage → Models → + → Import GGUF → Template: Qwen3 / ChatML |
-| **Termux** | Android CLI | `sh scripts/fetch-model.sh kilo` (optional) |
-| **LM Studio** | Desktop | My Models → Import → select `.gguf` |
-| **Ollama** | Desktop | `ollama create pocket-ai -f Modelfile.ollama` |
+| PocketPal AI | Android / iOS | [docs/pocketpal.md](docs/pocketpal.md) |
+| ChatterUI | Android | [docs/chatterui.md](docs/chatterui.md) |
+| Termux + llama-cpp-python | Android CLI | [docs/termux.md](docs/termux.md) |
+| LM Studio / Ollama | desktop | [docs/lmstudio-ollama.md](docs/lmstudio-ollama.md) |
 
-**Settings:** Context 4096 (2048 on 2–3 GB phones). Threads = your big CPU cores.
+## Quality bar
+Every build ships a manifest (ppl source -> pocket, retention %, sha256).
+Retention = 100 x ppl_source / ppl_pocket vs the Q8_0 baseline; target is 90%+.
 
----
+## Rebuild / refresh
+- CPU session (no GPU needed): run pocketmodel_colab_cpu.ipynb cells 1-6 — builds the 5 phone tiers.
+- GPU session (Titan 27B path): run pocketmodel_colab.ipynb when GPU quota is available.
 
-## 🏗️ Built With
-
-1. **Source:** Qwen/Qwen3-0.6B & Qwen3-1.7B Q8_0 GGUF (bartowski)
-2. **Calibration:** wikitext-2-raw validation set
-3. **Compression:** llama.cpp `llama-imatrix` + `llama-quantize` (IQ2_M / Q3_K_M / Q4_K_M)
-4. **Evaluation:** Perplexity vs Q8_0 baseline — retention target 90%+
-5. **Packaging:** Standard GGUF — no conversion on-device
-
----
-
-## 🏆 Founder
-
-**Nadeem**  
-- GitHub: https://github.com/junaidshah9826650092-cmyk  
-- HuggingFace: https://huggingface.co/junaiidshah78634  
-- Repo: https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab  
-
----
-
-## 📄 License
-
-Apache-2.0 · Qwen3 (Apache-2.0) · bartowski GGUF quants · llama.cpp (MIT)
+## Credits
+Qwen3 (Apache-2.0) - bartowski GGUF quants - DavidAU teacher model - llama.cpp (MIT)
