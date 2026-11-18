@@ -1,50 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f1c"/>
-      <stop offset="100%" stop-color="#1e1b4b"/>
+    <!-- बैकग्राउंड और आइकन के लिए ग्रेडिएंट्स -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1528" />
+      <stop offset="100%" stop-color="#050811" />
     </linearGradient>
-    <linearGradient id="meshBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#2563eb"/>
+    
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ef2ff" />
+      <stop offset="50%" stop-color="#22b8ff" />
+      <stop offset="100%" stop-color="#3b66f5" />
     </linearGradient>
-    <linearGradient id="meshPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#a855f7"/>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c471ed" />
+      <stop offset="50%" stop-color="#8a4fff" />
+      <stop offset="100%" stop-color="#5b24d6" />
     </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
+
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7ef9ff" />
+      <stop offset="50%" stop-color="#1cb5e0" />
+      <stop offset="100%" stop-color="#7b42f6" />
+    </linearGradient>
   </defs>
-  <!-- Rounded background -->
-  <rect width="1024" height="1024" rx="220" fill="url(#iconBg)"/>
-  
-  <!-- Mesh/Network geometric shape (PocketAI icon) -->
-  <!-- Left blue shape -->
-  <path d="M280 520 L360 420 L460 440 L380 560 Z" fill="#38bdf8"/>
-  <path d="M360 420 L460 440 L560 540 L420 560 Z" fill="#22d3ee"/>
-  
-  <!-- Center tall spike -->
-  <path d="M500 260 L540 480 L620 480 L580 300 Z" fill="#38bdf8"/>
-  
-  <!-- Right purple shape -->
-  <path d="M540 320 L640 320 L740 480 L600 480 Z" fill="#c084fc"/>
-  <path d="M640 320 L740 480 L740 640 L580 640 Z" fill="#a855f7"/>
-  
-  <!-- Bottom blue shape -->
-  <path d="M580 480 L680 640 L560 760 L460 640 Z" fill="#22d3ee"/>
-  <path d="M460 640 L560 760 L440 680 L360 580 L460 580 Z" fill="#38bdf8"/>
-  
-  <!-- Bottom small purple triangle -->
-  <path d="M560 760 L640 760 L600 840 Z" fill="#a855f7"/>
-  
-  <!-- Inner detail lines -->
-  <path d="M500 260 L580 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
-  <path d="M360 420 L500 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
-  <path d="M640 320 L580 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
-  <path d="M580 480 L600 640" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
-  
-  <!-- Central dot -->
-  <circle cx="512" cy="480" r="14" fill="#f1f5f9"/>
+
+  <!-- ऐप आइकन का राउंडेड बैकग्राउंड -->
+  <rect x="36" y="36" width="440" height="440" rx="96" fill="url(#bgGrad)" stroke="#1e2947" stroke-width="2"/>
+
+  <!-- बायां हिस्सा (ब्रेन पॉलीगॉन) -->
+  <polygon points="168,162 212,146 184,210 132,248" fill="url(#cyanGrad)" />
+  <polygon points="168,162 132,248 164,284 184,210" fill="#189ad3" />
+  <polygon points="132,248 164,284 242,284 242,312 162,312" fill="url(#purpleGrad)" />
+  <polygon points="184,210 212,146 218,184 188,242" fill="#48cae4" />
+
+  <!-- दायां हिस्सा (ब्रेन पॉलीगॉन) -->
+  <polygon points="266,142 336,162 310,202 266,192" fill="url(#purpleGrad)" />
+  <polygon points="336,162 376,222 310,202" fill="#d084f5" />
+  <polygon points="310,202 376,222 332,246" fill="url(#cyanGrad)" />
+  <polygon points="332,246 376,222 362,288 312,272" fill="#29b6f6" />
+  <polygon points="312,272 362,288 322,324 282,292" fill="url(#purpleGrad)" />
+  <polygon points="282,292 312,334 294,378 264,328" fill="#7c4dff" />
+
+  <!-- बीच का मुख्य लाइटनिंग बोल्ट (Lightning Bolt) -->
+  <polygon points="258,108 188,266 254,266 238,392 332,242 258,242" fill="url(#boltGrad)" />
+  <!-- लाइटनिंग बोल्ट पर 3D हाइलाइट शेडिंग -->
+  <polygon points="258,108 254,266 188,266" fill="#80f5ff" opacity="0.55" />
+  <polygon points="258,242 332,242 238,392 254,266" fill="#4a6cf7" opacity="0.45" />
 </svg>
