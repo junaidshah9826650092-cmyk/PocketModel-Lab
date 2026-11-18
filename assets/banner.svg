@@ -37,7 +37,6 @@
     <line x1="38" y1="34" x2="28" y2="30"/>
     <line x1="12" y1="46" x2="0" y2="60"/>
   </g>
-  <!-- PocketModel Lab text -->
   <text x="210" y="120" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-1">PocketModel Lab</text>
   <text x="212" y="168" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#cbd5e1">Compressed LLMs for Mobile Devices</text>
   <rect x="705" y="55" width="380" height="145" rx="14" fill="url(#glassCard)" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
