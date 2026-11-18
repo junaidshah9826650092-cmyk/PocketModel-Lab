@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="72" fill="url(#g1)"/>
+  <!-- phone body -->
+  <rect x="124" y="116" width="264" height="332" rx="46" fill="#334155" stroke="#475569" stroke-width="5"/>
+  <!-- screen -->
+  <rect x="152" y="150" width="208" height="264" rx="28" fill="#064e3b" opacity="0.9"/>
+  <!-- code blocks on screen -->
+  <rect x="172" y="174" width="168" height="24" fill="#22d3ee" rx="4"/>
+  <rect x="172" y="206" width="120" height="20" fill="#34d399" rx="3"/>
+  <rect x="172" y="234" width="180" height="20" fill="#a78bfa" rx="3"/>
+  <rect x="172" y="262" width="100" height="18" fill="#f472b6" rx="3"/>
+  <!-- circuit trace -->
+  <path d="M180 200 L330 200 L330 242 L284 242 L284 302 L366 302" stroke="#22d3ee" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- brain / ai head -->
+  <circle cx="256" cy="144" r="30" fill="#38bdf8"/>
+  <path d="M230 144 Q256 114 282 144 Q256 174 230 144" stroke="#22d3ee" stroke-width="5" fill="none"/>
+  <text x="256" y="482" font-family="sans-serif" font-size="26" font-weight="700" fill="#22d3ee" text-anchor="middle">PocketModel-Lab</text>
+  <text x="256" y="504" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Phone-ready GGUF &bull; Apache-2.0</text>
+</svg>
