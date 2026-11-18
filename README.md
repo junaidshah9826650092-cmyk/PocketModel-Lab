@@ -54,5 +54,11 @@ Original: https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735
 ## Rebuild / refresh
 Open the Colab notebook (Runtime -> T4 GPU), run cells 1-9, then cell 10 pushes this repo + uploads the release assets. Notebook file: pocketmodel_colab.ipynb (auto-committed when present in the session).
 
+## Founder
+Built by **Nadeem**  
+- GitHub: https://github.com/junaidshah9826650092-cmyk  
+- HuggingFace: https://huggingface.co/junaiidshah78634  
+- Repo: https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab  
+
 ## Credits
 Qwen3 (Apache-2.0) - bartowski GGUF quants - DavidAU teacher model - llama.cpp (MIT)
