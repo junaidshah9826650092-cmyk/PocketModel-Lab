@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="PocketAI" width="200"/>
+  <img src="assets/banner.svg" alt="PocketAI Banner" width="100%"/>
 </p>
 
 <h1 align="center">PocketAI</h1>
@@ -10,6 +10,10 @@
   <a href="https://huggingface.co/junaiidshah78634/PocketModel-Lab"><img src="https://img.shields.io/badge/HuggingFace-Model-yellow?logo=huggingface" alt="HF Model"/></a>
   <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License"/></a>
   <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/issues"><img src="https://img.shields.io/github/issues/junaidshah9826650092-cmyk/PocketModel-Lab" alt="Issues"/></a>
+</p>
+
+<p align="center">
+  <img src="assets/demo.svg" alt="PocketAI Demo" width="700"/>
 </p>
 
 ---
