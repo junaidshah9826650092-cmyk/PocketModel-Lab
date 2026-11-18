@@ -8,11 +8,11 @@ Open your phone browser and tap one link:
 
 | Phone RAM | Build | Download |
 |---|---|---|
-| 2–3 GB (budget) | PocketModel-Kilo (0.30 GB) | [Kilo](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Kilo-qwen3-0.6B-IQ2_M.gguf) |
-| 2–4 GB (low-end) | PocketModel-Kilo-HD (0.38 GB) | [Kilo-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
-| 4–6 GB (mid) | PocketModel-Mega (0.44 GB) | [Mega](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Mega-qwen3-0.6B-Q4_K_M.gguf) |
-| 6–8 GB (upper-mid) | PocketModel-Giga (0.75 GB) | [Giga](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Giga-qwen3-1.7B-IQ2_M.gguf) |
-| 8 GB+ (flagship) | PocketModel-Giga-HD (1.16 GB) | [Giga-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
+| 2–3 GB (budget) | NadeemAI-Kilo (0.30 GB) | [NadeemAI-Kilo](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf) |
+| 2–4 GB (low-end) | NadeemAI-Kilo-HD (0.38 GB) | [NadeemAI-Kilo-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
+| 4–6 GB (mid) | NadeemAI-Mega (0.44 GB) | [NadeemAI-Mega](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Mega-qwen3-0.6B-Q4_K_M.gguf) |
+| 6–8 GB (upper-mid) | NadeemAI-Giga (0.75 GB) | [NadeemAI-Giga](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Giga-qwen3-1.7B-IQ2_M.gguf) |
+| 8 GB+ (flagship) | NadeemAI-Giga-HD (1.16 GB) | [NadeemAI-Giga-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
 
 File lands in **Downloads/**.
 

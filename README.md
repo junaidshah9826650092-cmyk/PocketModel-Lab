@@ -23,16 +23,16 @@ All assets are in the GitHub Release `pocket-v1.0`:
 
 | Build | File | Size | Direct download (click / tap) |
 |---|---|---|---|
-| PocketModel-Kilo | `PocketModel-Kilo-qwen3-0.6B-IQ2_M.gguf` | ~0.30 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Kilo-qwen3-0.6B-IQ2_M.gguf) |
-| PocketModel-Kilo-HD | `PocketModel-KiloHD-qwen3-0.6B-Q3_K_M.gguf` | ~0.38 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
-| PocketModel-Mega | `PocketModel-Mega-qwen3-0.6B-Q4_K_M.gguf` | ~0.44 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Mega-qwen3-0.6B-Q4_K_M.gguf) |
-| PocketModel-Giga | `PocketModel-Giga-qwen3-1.7B-IQ2_M.gguf` | ~0.75 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Giga-qwen3-1.7B-IQ2_M.gguf) |
-| PocketModel-Giga-HD | `PocketModel-GigaHD-qwen3-1.7B-Q4_K_M.gguf` | ~1.16 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
+| NadeemAI-Kilo | `NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf` | ~0.30 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf) |
+| NadeemAI-Kilo-HD | `NadeemAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf` | ~0.38 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
+| NadeemAI-Mega | `NadeemAI-Mega-qwen3-0.6B-Q4_K_M.gguf` | ~0.44 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Mega-qwen3-0.6B-Q4_K_M.gguf) |
+| NadeemAI-Giga | `NadeemAI-Giga-qwen3-1.7B-IQ2_M.gguf` | ~0.75 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Giga-qwen3-1.7B-IQ2_M.gguf) |
+| NadeemAI-Giga-HD | `NadeemAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf` | ~1.16 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
 
 Or curl any tier (Termux / PC / Mac):
 ```sh
-curl -L -o PocketModel-Kilo.gguf \
-  https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketModel-Kilo-qwen3-0.6B-IQ2_M.gguf
+curl -L -o NadeemAI-Kilo.gguf \
+  https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf
 ```
 
 ## Run it in a local app
