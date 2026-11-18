@@ -1,21 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#0f172a"/>
-  <circle cx="200" cy="530" r="120" fill="#334155">
-    <animate attributeName="r" values="120;160;120" dur="5s" repeatCount="indefinite"/>
-    <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+  <defs>
+    <linearGradient id="demoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="demoOrb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#demoBg)"/>
+  <circle cx="200" cy="530" r="130" fill="#334155" opacity="0.6">
+    <animate attributeName="r" values="130;170;130" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values="0.6;0.9;0.6" dur="6s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="1050" cy="100" r="140" fill="#1e293b"/>
-  <!-- Phone -->
-  <rect x="420" y="70" width="360" height="560" rx="90" fill="#1e293b"/>
+  <circle cx="1050" cy="100" r="160" fill="#1e293b"/>
+
+  <!-- Phone mockup -->
+  <rect x="420" y="70" width="360" height="560" rx="90" fill="#1e293b" stroke="#334155" stroke-width="2"/>
   <rect x="470" y="130" width="260" height="500" rx="50" fill="#020617"/>
+  
+  <!-- Screen -->
   <rect x="510" y="190" width="40" height="6" rx="3" fill="#38bdf8"/>
   <rect x="564" y="190" width="34" height="6" rx="3" fill="#334155"/>
   <rect x="510" y="222" width="140" height="44" rx="22" fill="#334155"/>
   <rect x="510" y="280" width="180" height="44" rx="22" fill="#334155"/>
   <rect x="560" y="338" width="120" height="40" rx="20" fill="#334155"/>
   <rect x="510" y="392" width="200" height="48" rx="24" fill="#334155"/>
-  <!-- Pocket -->
+  
+  <!-- Pocket icon -->
   <path d="M560 520 L610 560 L700 560 L700 610 L420 610 L420 560 L510 560 Z" fill="#38bdf8"/>
+  
   <!-- Label -->
   <text x="600" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="800" fill="#f1f5f9" text-anchor="middle">PocketAI</text>
   <text x="600" y="616" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#94a3b8" text-anchor="middle">Download &bull; Import &bull; Chat &mdash; no commands</text>
