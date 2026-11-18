@@ -3,42 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PocketAI — Phone-Ready GGUF Models</title>
+<title>PocketAI — Complete Setup Guide</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0f1c; color: #f1f5f9; line-height: 1.6; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-  header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #0a0f1c 0%, #1e1b4b 100%); border-radius: 24px; margin-bottom: 2rem; position: relative; overflow: hidden; }
-  header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 50%); animation: rotate 20s linear infinite; z-index: 0; }
-  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .logo { width: 100px; height: 100px; margin-bottom: 1rem; z-index: 1; position: relative; filter: drop-shadow(0 0 20px rgba(34,211,238,0.4)); }
-  h1 { font-size: 3rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #22d3ee, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 1; position: relative; }
-  h2 { font-size: 1.5rem; margin-top: 2rem; color: #22d3ee; border-bottom: 2px solid #334155; padding-bottom: 0.5rem; }
-  p { color: #cbd5e1; }
-  .subtitle { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; z-index: 1; position: relative; }
-  .badges { display: flex; gap: 0.75rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; z-index: 1; position: relative; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0f1c; color: #f1f5f9; line-height: 1.8; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+  header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #0a0f1c 0%, #1e1b4b 100%); border-radius: 24px; margin-bottom: 2rem; }
+  .logo { width: 96px; height: 96px; margin-bottom: 1rem; filter: drop-shadow(0 0 25px rgba(34,211,238,0.35)); }
+  h1 { font-size: 3rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #22d3ee, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  h2 { font-size: 1.75rem; margin-top: 3rem; color: #22d3ee; border-bottom: 2px solid #334155; padding-bottom: 0.5rem; }
+  h3 { font-size: 1.25rem; color: #818cf8; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  p { color: #cbd5e1; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; }
+  
+  /* Alert boxes */
+  .alert { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
+  .alert.warn { border-left: 4px solid #f59e0b; }
+  .alert.info { border-left: 4px solid #38bdf8; }
+  .alert.ok { border-left: 4px solid #22c55e; }
+  .alert.bad { border-left: 4px solid #ef4444; }
+  
+  .badges { display: flex; gap: 0.75rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; }
   .badge { padding: 0.5rem 1rem; border-radius: 20px; background: #1e293b; border: 1px solid #334155; color: #22d3ee; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
   .badge:hover { background: #22d3ee; color: #0a0f1c; transform: translateY(-2px); }
+  
   table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: #1e293b; border-radius: 16px; overflow: hidden; }
   th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #334155; }
   th { background: #0f172a; color: #22d3ee; font-weight: 700; }
   tr:hover { background: #253045; }
-  .size-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 12px; background: #0f172a; color: #22d3ee; font-size: 0.8rem; font-weight: 600; }
-  .section { margin: 3rem 0; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-  @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } h1 { font-size: 2rem; } }
-  .card { background: #1e293b; border: 1px solid #334155; border-radius: 20px; padding: 1.5rem; }
-  .card h3 { color: #f1f5f9; margin-bottom: 1rem; }
-  .card ul { list-style: none; padding-left: 0; }
-  .card ul li { margin: 0.75rem 0; color: #cbd5e1; }
-  .card ul li::before { content: "▹"; color: #22d3ee; font-weight: 700; margin-right: 0.5rem; }
+  
   .download-section { background: linear-gradient(135deg, #1e1b4b 0%, #0a0f1c 100%); border-radius: 24px; padding: 2rem; margin: 2rem 0; border: 1px solid #334155; }
   .download-section h2 { color: #f1f5f9; border: none; margin-bottom: 1.5rem; }
   .download-btn { display: inline-block; background: #22d3ee; color: #0a0f1c; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; margin: 0.5rem; transition: all 0.3s; border: 2px solid transparent; }
   .download-btn:hover { background: #67e8f9; transform: translateY(-2px); box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
   .download-btn.secondary { background: transparent; color: #22d3ee; border-color: #22d3ee; }
   .download-btn.secondary:hover { background: #22d3ee; color: #0a0f1c; }
-  .footer { text-align: center; padding: 2rem; color: #64748b; border-top: 1px solid #334155; margin-top: 3rem; }
+  
+  .step { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 1.5rem; margin: 1rem 0; }
+  .step-num { display: inline-block; background: #38bdf8; color: #0a0f1c; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: 800; margin-right: 0.75rem; }
+  
+  .code { background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 1rem; font-family: 'Consolas', monospace; font-size: 0.875rem; color: #a5f3fc; overflow-x: auto; margin: 1rem 0; }
+  
+  .footer { text-align: center; padding: 3rem; color: #64748b; border-top: 1px solid #334155; margin-top: 3rem; }
 </style>
 </head>
 <body>
@@ -47,74 +53,169 @@
   <header>
     <img src="https://raw.githubusercontent.com/junaidshah9826650092-cmyk/PocketModel-Lab/main/assets/icon.svg" alt="PocketAI" class="logo">
     <h1>PocketAI</h1>
-    <p class="subtitle">Phone-ready GGUF language models — compressed for speed, built for mobile.</p>
+    <p class="subtitle">Complete Step-by-Step Guide — Phone aur PC dono ke liye</p>
     <div class="badges">
-      <a href="#downloads" class="badge">📥 Download Models</a>
-      <a href="#mobile" class="badge">📱 Mobile Setup</a>
-      <a href="#pc" class="badge">💻 PC Setup</a>
-      <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases" class="badge">🚀 GitHub Releases</a>
-      <a href="https://huggingface.co/junaiidshah78634/PocketModel-Lab" class="badge">🤗 HuggingFace</a>
+      <a href="#download" class="badge">Download Models</a>
+      <a href="#phone" class="badge">Android Setup</a>
+      <a href="#pc" class="badge">PC Setup</a>
+      <a href="#colab" class="badge">Colab Pipeline</a>
+      <a href="#troubleshoot" class="badge">Troubleshoot</a>
     </div>
-  </header>
-
-  <div class="section" id="models">
-    <h2>📱 Pick Your Build by Phone RAM</h2>
-    <table>
-      <thead>
-        <tr><th>Build</th><th>Phone Class</th><th>Base</th><th>Quant</th><th>Size</th><th>RAM Needed</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>PocketAI-Kilo</strong></td><td>Budget (2–3 GB)</td><td>Ndx-0.6B</td><td>IQ2_M</td><td><span class="size-badge">~0.30 GB</span></td><td>~2 GB</td></tr>
-        <tr><td><strong>PocketAI-Kilo-HD</strong></td><td>Low-end (2–4 GB)</td><td>Ndx-0.6B</td><td>Q3_K_M</td><td><span class="size-badge">~0.38 GB</span></td><td>~2.5 GB</td></tr>
-        <tr><td><strong>PocketAI-Mega</strong></td><td>Mid (4–6 GB)</td><td>Ndx-0.6B</td><td>Q4_K_M</td><td><span class="size-badge">~0.44 GB</span></td><td>~3 GB</td></tr>
-        <tr><td><strong>PocketAI-Giga</strong></td><td>Upper-mid (6–8 GB)</td><td>Ndx-1.7B</td><td>IQ2_M</td><td><span class="size-badge">~0.75 GB</span></td><td>~4 GB</td></tr>
-        <tr><td><strong>PocketAI-Giga-HD</strong></td><td>Flagship (8 GB+)</td><td>Ndx-1.7B</td><td>Q4_K_M</td><td><span class="size-badge">~1.16 GB</span></td><td>~5 GB</td></tr>
-        <tr><td><strong>PocketAI-Titan</strong></td><td>Emulator / PC</td><td>27B Teacher</td><td>IQ2_M</td><td><span class="size-badge">~10–12 GB</span></td><td>12 GB+</td></tr>
-      </tbody>
-    </table>
   </div>
 
-  <div class="download-section" id="downloads">
-    <h2>🚀 Direct Download — No Commands Needed</h2>
-    <p>Just tap the link on your phone. File downloads directly. All assets in GitHub Release <strong>pocket-v1.0</strong>.</p>
+  <!-- INTRODUCTION -->
+  <div class="section">
+    <h2>1. PocketAI Kya Hai?</h2>
+    <p>PocketAI ek <b>GGUF format model</b> hai jo aapke phone ya PC par <b>offline</b> chal sakta hai. Iska koi internet chahiye nahi baar-baar, sirf ek baar download kar lo phir kabhi bhi use kar sakte ho.</p>
+    <p>Ye Qwen3 architecture par based hai, lekin iska apna naam hai <b>PocketAI</b> (Ndx series). Sabse chhota model sirf <b>0.30 GB</b> ka hai jo budget phones par bhi aasaan se chalta hai.</p>
+    <div class="alert info">
+      <b>Important:</strong> Ye model <b>quantized</b> hai, matlab iska size chhota rakha gaya hai taaki phone me asaani se chale. Lekin full 27B model (Titan) sirf PC/emulator par chalega, phone par nahi.
+    </div>
+  </div>
+
+  <!-- MODEL TABLE -->
+  <div class="section">
+    <h2>2. Apne Phone Ke Hisaab Se Model Chunein</h2>
+    <table>
+      <thead>
+        <tr><th>Build Naam</th><th>Phone RAM</th><th>Base Model</th><th>Quant Type</th><th>File Size</th><th>Kitna RAM Chahiye</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>PocketAI-Kilo</strong></td><td>Budget (2-3 GB)</td><td>Ndx-0.6B</td><td>IQ2_M</td><td>~0.30 GB</td><td>~2 GB</td></tr>
+        <tr><td><strong>PocketAI-Kilo-HD</strong></td><td>Low-end (2-4 GB)</td><td>Ndx-0.6B</td><td>Q3_K_M</td><td>~0.38 GB</td><td>~2.5 GB</td></tr>
+        <tr><td><strong>PocketAI-Mega</strong></td><td>Mid (4-6 GB)</td><td>Ndx-0.6B</td><td>Q4_K_M</td><td>~0.44 GB</td><td>~3 GB</td></tr>
+        <tr><td><strong>PocketAI-Giga</strong></td><td>Upper-mid (6-8 GB)</td><td>Ndx-1.7B</td><td>IQ2_M</td><td>~0.75 GB</td><td>~4 GB</td></tr>
+        <tr><td><strong>PocketAI-Giga-HD</strong></td><td>Flagship (8 GB+)</td><td>Ndx-1.7B</td><td>Q4_K_M</td><td>~1.16 GB</td><td>~5 GB</td></tr>
+        <tr><td><strong>PocketAI-Titan</strong></td><td>PC / Emulator</td><td>27B Teacher</td><td>IQ2_M</td><td>~10-12 GB</td><td>12 GB+</td></tr>
+      </tbody>
+    </table>
+    <p><b>Salah:</strong> Agar aapka phone 3 GB RAM ka hai, toh <b>PocketAI-Kilo</strong> lein. Agar 6 GB ya usse upar hai, toh <b>PocketAI-Mega</strong> ya <b>PocketAI-Giga</strong> lein.</p>
+  </div>
+
+  <!-- DOWNLOAD SECTION -->
+  <div class="download-section" id="download">
+    <h2>3. Model Download Kaise Karein (Bina Command Ke)</h2>
+    <p>Sabse aasaan tareeka — apne phone ke browser mein link par tap karo, file download ho jayegi. Koi terminal, koi command nahi.</p>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-Ndx-IQ2_M.gguf" class="download-btn">PocketAI-Kilo (0.30 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-KiloHD-Ndx-Q3_K_M.gguf" class="download-btn">PocketAI-Kilo-HD (0.38 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-Ndx-Q4_K_M.gguf" class="download-btn">PocketAI-Mega (0.44 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-Ndx-IQ2_M.gguf" class="download-btn secondary">PocketAI-Giga (0.75 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-Ndx-Q4_K_M.gguf" class="download-btn secondary">PocketAI-Giga-HD (1.16 GB)</a>
-    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">Tip: Use <code>releases/latest/download/</code> to always get the newest build.</p>
+    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">Ye sab GitHub Release <strong>pocket-v1.0</strong> se link karke liye gaye hain.</p>
   </div>
 
-  <div class="two-col">
-    <div class="card" id="mobile">
-      <h2>📱 Mobile Phone (Android / iOS)</h2>
-      <ul>
-        <li><strong>PocketPal AI:</strong> Settings → Local Models → + → Load from phone → pick .gguf</li>
-        <li><strong>ChatterUI:</strong> Manage → Models → + → Import GGUF → Template: Qwen3 / ChatML</li>
-        <li><strong>Termux:</strong> <code>sh scripts/fetch-model.sh kilo</code> (optional)</li>
-        <li><strong>Context:</strong> 4096 (2048 on 2–3 GB phones)</li>
-        <li><strong>Threads:</strong> Number of big CPU cores</li>
-      </ul>
-    </div>
-    <div class="card" id="pc">
-      <h2>💻 Desktop PC (Windows / Mac / Linux)</h2>
-      <ul>
-        <li><strong>LM Studio:</strong> My Models → Import → select .gguf</li>
-        <li><strong>Ollama:</strong> <code>ollama create pocket-ai -f Modelfile.ollama</code></li>
-        <li><strong>Context:</strong> 4096, GPU offload as available</li>
-        <li><strong>Same files:</strong> One GGUF runs everywhere</li>
-      </ul>
+  <!-- PHONE SETUP -->
+  <div class="section" id="phone">
+    <h2>4. Android Phone Par Kaise Chalayein</h2>
+    <div class="step"><span class="step-num">Step 1</span><b>App Install Karein</strong></div>
+    <p>Google Play Store se <b>PocketPal AI</strong> ya <b>ChatterUI</strong> install karein.</p>
+    <div class="step"><span class="step-num">Step 2</span><b>Model Import Karein</strong></div>
+    <p>1. App kholein → <b>Settings → Local Models → +</strong><br>
+    2. <b>Load from phone</strong> chunein.<br>
+    3. <strong>Downloads</strong> folder se apni download ki hui <b>.gguf</strong> file select karein.<br>
+    3. Import hone ke baad model chat screen par dikhne lagega.</p>
+    <div class="step"><span class="step-num">Step 3</span><b>Settings Set Karein</strong></div>
+    <ul>
+      <li><b>Context (n_ctx):</strong> 4096 (agar phone 3 GB RAM ka hai toh 2048 rakhein)</li>
+      <li><b>Threads:</strong> Apne phone ke big CPU cores ki ginti (aam taur par 4)</li>
+      <li><b>KV Cache:</strong> q8_0 (3 GB RAM phones par)</li>
+      <li><b>Temperature:</strong> 0.7</li>
+    </ul>
+    <div class="step"><span class="step-num">Step 4</span><b>Chat Shuru Karein</strong></div>
+    <p>Model select karo, message type karo, Send dabao. Qwen3 model ke liye tezi se jawab chahiye toh prompt mein <b>/no_think</strong> likh sakte ho.</p>
+  </div>
+
+  <!-- PC SETUP -->
+  <div class="section" id="pc">
+    <h2>5. Desktop PC (Windows / Mac / Linux) Par Kaise Chalayein</h2>
+    <div class="step"><span class="step-num">Step 1</span><b>App Install Karein</strong></div>
+    <ul>
+      <li><b>LM Studio:</strong> lmstudio.ai se download karein</li>
+      <li><b>Ollama:</strong> ollama.com se download karein</li>
+    </ul>
+    <div class="step"><span class="step-num">Step 2</span><b>Model Import Karein</strong></div>
+    <div class="code">ollama create pocket-ai -f Modelfile.ollama</div>
+    <p>Ya LM Studio mein <b>My Models → Import</strong> par jaakar apni .gguf file select karein.</p>
+    <div class="step"><span class="step-num">Step 3</span><b>Chat Karein</strong></div>
+    <p>Model load hone ke baad chat shuru karo. PC par ye chalega bina kisi internet ke.</p>
+  </div>
+
+  <!-- COLAB SETUP -->
+  <div class="section" id="colab">
+    <h2>6. Google Colab Pe Model Banana (Agar Apna Model Banana Ho)</h2>
+    <p>Agar aap apna custom model banana chahte ho, toh Colab notebook use karo:</p>
+    <div class="step"><span class="step-num">Step 1</span><b>Notebook Upload Karein</strong></div>
+    <p>Colab mein <b>File → Upload notebook</strong> karo → <b>pocketmodel_colab_cpu.ipynb</strong> select karo.</p>
+    <div class="step"><span="step-num">Step 2</span><b>Runtime Set Karein</strong></div>
+    <p><b>Runtime → Change runtime type → T4 GPU → Save</strong></div>
+    <div class="step"><span class="step-num">Step 3</span><b>Cells Run Karein</strong></div>
+    <p>Cells <b>1 se 6</strong> kram mein run karo:</p>
+    <ul>
+      <li>Cell 1: Config (GitHub aur HF token daalna)</li>
+      <li>Cell 2: llama.cpp build (CPU tools)</li>
+      <li>Cell 3: Calibration + imatrix (kabhi kabhi 1-2 ghanta lag sakta hai)</li>
+      <li>Cell 4: Quantize + perplexity eval</li>
+      <li>Cell 5: Repo files taiyar karna</li>
+      <li>Cell 6: GitHub push + HuggingFace upload</li>
+    </ul>
+    <div class="alert warn">
+      <b>Dhyan rakhein:</strong> Cell 3 thoda slow chalta hai (CPU par). Isse band na karein. Agar error aaye toh screenshot bhejein.
     </div>
   </div>
 
+  <!-- ENV SETUP -->
   <div class="section">
-    <h2>🏗️ Built With</h2>
-    <p>Source: Qwen/Qwen3-0.6B & Qwen3-1.7B Q8_0 GGUF (bartowski) · Calibration: wikitext-2-raw · Compression: llama.cpp imatrix + quantize (IQ2_M / Q3_K_M / Q4_K_M) · Evaluation: Perplexity vs Q8_0 baseline — retention target 90%+</p>
+    <h2>7. .env File Kaise Banayein (Token Ke Liye)</strong></h2>
+    <p>Apne tokens ek saath rakhne ke liye <b>.env</strong> file banayein:</p>
+    <div class="code">
+GH_REPO=junaidshah9826650092-cmyk/PocketModel-Lab<br>
+GH_TOKEN=ghp_your_github_token_here<br>
+HF_REPO_ID=junaiidshah78634/PocketModel-Lab<br>
+HF_TOKEN=hf_your_huggingface_write_token_here<br>
+GEMINI_WEB2API_URL=http://localhost:5000<br>
+NVIDIA_API_KEY=nvapi_your_nvidia_key_here<br>
+OPENROUTER_API_KEY=sk-or-your_openrouter_key_here
+    </div>
+    <div class="alert info">
+      <b>Token kahan se milega:</strong><br>
+      • GitHub PAT: https://github.com/settings/tokens<br>
+      • HF Token: https://huggingface.co/settings/tokens<br>
+      • Gemini API: https://aistudio.google.com/app/apikey
+    </div>
+  </div>
+
+  <!-- TROUBLESHOOT -->
+  <div class="section" id="troubleshoot">
+    <h2>8. Common Problems aur Unka Solution</strong></h2>
+    <table>
+      <thead><tr><th>Problem</th><th>Solution</th></tr></thead>
+      <tbody>
+        <tr><td>Model load nahi ho raha</td><td>File .gguf hai confirm karo, size check karo ki download complete hua hai ya nahi.</td></tr>
+        <tr><td>App crash ho raha hai</td><td>Context kam karo (2048), threads kam rakho, app restart karo.</td></tr>
+        <tr><td>Jawab nahi aa raha</td><td>Model phir se import karo, app ko close karke dobara kholo.</td></tr>
+        <tr><td>Download fail ho raha hai</td><td>Wi-Fi check karo, ya GitHub Release page refresh karke dobara download karein.</td></tr>
+        <tr><td>Colab GPU nahi mil raha</td><td>Runtime → Change runtime type → T4 GPU → Save. Agar quota khatam ho toh 24 ghante baad try karein.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2>9. Aksar Pooche Jane Wale Sawal (FAQ)</strong></h2>
+    <p><b>Q: Kya ye model offline chalega?</strong><br>
+    A: Haan, ek baar download karne ke baad internet ki zaroorat nahi padti.</p>
+    <p><b>Q: Kya ek hi model phone aur PC dono par chalega?</strong><br>
+    A: Haan, GGUF format ek hi file sab jagah chalti hai.</p>
+    <p><b>Q: Titan model phone par chalega?</strong><br>
+    A: Nahi, Titan 27B model sirf PC/emulator par chalega.</p>
+    <p><b>Q: Model ka naam kya hoga?</strong><br>
+    A: PocketAI (Ndx series). System prompt mein aap apna naam de sakte ho.</p>
   </div>
 
   <div class="footer">
     <p><strong>Founder:</strong> Nadeem</p>
-    <p>GitHub: https://github.com/junaidshah9826650092-cmyk · HuggingFace: https://huggingface.co/junaiidshah78634</p>
+    <p>GitHub: https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab</p>
+    <p>HuggingFace: https://huggingface.co/junaiidshah78634/PocketModel-Lab</p>
     <p>License: Apache-2.0 · Qwen3 (Apache-2.0) · bartowski GGUF quants · llama.cpp (MIT)</p>
   </div>
 </div>
