@@ -4,32 +4,22 @@
       <stop offset="0%" stop-color="#0f172a"/>
       <stop offset="100%" stop-color="#1e1b4b"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="transparent"/>
-    </radialGradient>
   </defs>
   <rect width="1920" height="600" fill="url(#grad)"/>
-  <!-- Decorative energy orbs -->
-  <circle cx="180" cy="480" r="100" fill="url(#orb)" opacity="0.2"/>
-  <circle cx="1740" cy="140" r="140" fill="url(#orb)" opacity="0.15"/>
-  <circle cx="400" cy="120" r="60" fill="#a855f7" opacity="0.2"/>
-  <!-- Left brand -->
-  <circle cx="140" cy="300" r="76" fill="#38bdf8"/>
-  <path d="M104 300 Q140 260 176 300 Q140 340 104 300" fill="none" stroke="#0f172a" stroke-width="10" stroke-linecap="round"/>
+  <!-- Brand mark -->
+  <circle cx="140" cy="300" r="80" fill="#334155"/>
+  <path d="M104 300 Q140 260 176 300 Q140 340 104 300" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round"/>
+  <rect x="104" y="440" width="72" height="8" rx="4" fill="#38bdf8"/>
+  <!-- Brand text -->
   <text x="280" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#f1f5f9">PocketAI</text>
-  <text x="280" y="315" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#94a3b8">Compressed LLMs for mobile devices</text>
-  <rect x="280" y="340" width="44" height="5" fill="url(#accent)"/>
+  <text x="280" y="315" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">Compressed LLMs for mobile devices</text>
+  <rect x="280" y="340" width="44" height="5" fill="#38bdf8"/>
   <!-- Divider -->
   <line x1="560" y1="100" x2="560" y2="500" stroke="#334155" stroke-width="2"/>
-  <!-- Right phone -->
+  <!-- Phone mockup -->
   <rect x="1080" y="90" width="340" height="500" rx="80" fill="#1e293b"/>
   <rect x="1130" y="150" width="240" height="380" rx="40" fill="#020617"/>
+  <!-- Screen content -->
   <rect x="1170" y="200" width="40" height="6" rx="3" fill="#38bdf8"/>
   <rect x="1224" y="200" width="32" height="6" rx="3" fill="#334155"/>
   <rect x="1170" y="232" width="140" height="44" rx="22" fill="#334155"/>

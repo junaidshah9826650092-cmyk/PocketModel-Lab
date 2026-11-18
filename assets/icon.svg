@@ -1,41 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="50%" stop-color="#1e1b4b"/>
-      <stop offset="100%" stop-color="#312e81"/>
-    </linearGradient>
-    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="70%" stop-color="#2563eb"/>
-      <stop offset="100%" stop-color="#1e1b4b"/>
-    </radialGradient>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="25" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-  </defs>
-  <rect width="1024" height="1024" rx="200" fill="url(#grad)"/>
-  <!-- Energy orbs -->
-  <circle cx="220" cy="220" r="110" fill="url(#orb)" filter="url(#soft)" opacity="0.35"/>
-  <circle cx="840" cy="840" r="90" fill="url(#orb)" filter="url(#soft)" opacity="0.25"/>
-  <circle cx="820" cy="240" r="70" fill="#a855f7" filter="url(#soft)" opacity="0.3"/>
-  <!-- Pocket shape -->
+  <rect width="1024" height="1024" rx="220" fill="#0f172a"/>
+  <circle cx="512" cy="512" r="430" fill="none" stroke="#334155" stroke-width="16"/>
+  <!-- Pocket -->
   <path d="M512 760 L580 820 L684 820 L684 900 L340 900 L340 820 L444 820 Z" fill="#38bdf8"/>
   <!-- Phone -->
   <rect x="312" y="312" width="400" height="700" rx="84" fill="#1e293b"/>
   <rect x="356" y="364" width="312" height="596" rx="52" fill="#020617"/>
-  <!-- Screen content -->
-  <rect x="396" y="408" width="56" height="6" rx="3" fill="#38bdf8"/>
-  <rect x="466" y="408" width="32" height="6" rx="3" fill="#334155"/>
-  <rect x="396" y="448" width="160" height="44" rx="22" fill="#334155"/>
-  <rect x="396" y="504" width="200" height="44" rx="22" fill="#334155"/>
-  <rect x="440" y="560" width="140" height="40" rx="20" fill="#334155"/>
-  <rect x="396" y="612" width="220" height="48" rx="24" fill="#334155"/>
-  <!-- Core -->
-  <circle cx="512" cy="270" r="46" fill="#38bdf8"/>
-  <path d="M474 270 Q512 234 550 270 Q512 306 474 270" fill="none" stroke="#0f172a" stroke-width="10" stroke-linecap="round"/>
+  <!-- Screen lines -->
+  <rect x="396" y="408" width="48" height="6" rx="3" fill="#38bdf8"/>
+  <rect x="458" y="408" width="30" height="6" rx="3" fill="#334155"/>
+  <rect x="396" y="448" width="150" height="44" rx="22" fill="#334155"/>
+  <rect x="396" y="504" width="190" height="44" rx="22" fill="#334155"/>
+  <rect x="440" y="560" width="130" height="40" rx="20" fill="#334155"/>
+  <rect x="396" y="612" width="210" height="48" rx="24" fill="#334155"/>
+  <!-- Core circle -->
+  <circle cx="512" cy="270" r="44" fill="#38bdf8"/>
+  <path d="M474 270 Q512 236 550 270 Q512 304 474 270" fill="none" stroke="#0f172a" stroke-width="10" stroke-linecap="round"/>
   <!-- Text -->
   <text x="512" y="964" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="#f1f5f9" text-anchor="middle">PocketAI</text>
-  <text x="512" y="996" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">On-Device AI &bull; GGUF</text>
+  <text x="512" y="996" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#94a3b8" text-anchor="middle">On-Device AI &bull; GGUF</text>
 </svg>
