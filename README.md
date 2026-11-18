@@ -8,11 +8,11 @@ The 27B teacher (DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Unc
 ## Build names - pick by your phone's RAM
 | Build | Phone class | Base | Quant | Size* | Needs RAM |
 |---|---|---|---|---|---|
-| **PocketModel-Kilo** | budget (2-3 GB) | qwen3-0.6B | IQ2_M | ~0.28 GB | ~2 GB |
-| **PocketModel-Kilo-HD** | low-end (2-4 GB) | qwen3-0.6B | Q3_K_M | ~0.36 GB | ~2.5 GB |
-| **PocketModel-Mega** | mid (4-6 GB) | qwen3-0.6B | Q4_K_M | ~0.45 GB | ~3 GB |
-| **PocketModel-Giga** | upper-mid (6-8 GB) | qwen3-1.7B | IQ2_M | ~0.75 GB | ~4 GB |
-| **PocketModel-Giga-HD** | flagship (8 GB+) | qwen3-1.7B | Q4_K_M | ~1.05 GB | ~5 GB |
+| **PocketAI-Kilo** | budget (2-3 GB) | qwen3-0.6B | IQ2_M | ~0.30 GB | ~2 GB |
+| **PocketAI-Kilo-HD** | low-end (2-4 GB) | qwen3-0.6B | Q3_K_M | ~0.38 GB | ~2.5 GB |
+| **PocketAI-Mega** | mid (4-6 GB) | qwen3-0.6B | Q4_K_M | ~0.44 GB | ~3 GB |
+| **PocketAI-Giga** | upper-mid (6-8 GB) | qwen3-1.7B | IQ2_M | ~0.75 GB | ~4 GB |
+| **PocketAI-Giga-HD** | flagship (8 GB+) | qwen3-1.7B | Q4_K_M | ~1.16 GB | ~5 GB |
 | **PocketModel-Titan** | emulator / PC | 27B teacher | IQ2_M | ~10-12 GB | 12 GB+ (HF only) |
 
 *Confirmed sizes + quality live in [MODELS.md](MODELS.md) after a pipeline run.
@@ -23,16 +23,16 @@ All assets are in the GitHub Release `pocket-v1.0`:
 
 | Build | File | Size | Direct download (click / tap) |
 |---|---|---|---|
-| NadeemAI-Kilo | `NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf` | ~0.30 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf) |
-| NadeemAI-Kilo-HD | `NadeemAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf` | ~0.38 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
-| NadeemAI-Mega | `NadeemAI-Mega-qwen3-0.6B-Q4_K_M.gguf` | ~0.44 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Mega-qwen3-0.6B-Q4_K_M.gguf) |
-| NadeemAI-Giga | `NadeemAI-Giga-qwen3-1.7B-IQ2_M.gguf` | ~0.75 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Giga-qwen3-1.7B-IQ2_M.gguf) |
-| NadeemAI-Giga-HD | `NadeemAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf` | ~1.16 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
+| PocketAI-Kilo | `PocketAI-Kilo-qwen3-0.6B-IQ2_M.gguf` | ~0.30 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-qwen3-0.6B-IQ2_M.gguf) |
+| PocketAI-Kilo-HD | `PocketAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf` | ~0.38 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
+| PocketAI-Mega | `PocketAI-Mega-qwen3-0.6B-Q4_K_M.gguf` | ~0.44 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-qwen3-0.6B-Q4_K_M.gguf) |
+| PocketAI-Giga | `PocketAI-Giga-qwen3-1.7B-IQ2_M.gguf` | ~0.75 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-qwen3-1.7B-IQ2_M.gguf) |
+| PocketAI-Giga-HD | `PocketAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf` | ~1.16 GB | [Download](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
 
 Or curl any tier (Termux / PC / Mac):
 ```sh
-curl -L -o NadeemAI-Kilo.gguf \
-  https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/NadeemAI-Kilo-qwen3-0.6B-IQ2_M.gguf
+curl -L -o PocketAI-Kilo.gguf \
+  https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-qwen3-0.6B-IQ2_M.gguf
 ```
 
 ## Run it in a local app
