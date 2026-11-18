@@ -1,50 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <defs>
     <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="0%" stop-color="#0b0f1c"/>
       <stop offset="100%" stop-color="#1e1b4b"/>
     </linearGradient>
-    <linearGradient id="neonBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#818cf8"/>
+    <linearGradient id="meshBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
     </linearGradient>
-    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="meshPurple" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#c084fc"/>
       <stop offset="100%" stop-color="#a855f7"/>
     </linearGradient>
     <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feGaussianBlur stdDeviation="12" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
-  <!-- Background rounded square -->
+  <!-- Rounded background -->
   <rect width="1024" height="1024" rx="220" fill="url(#iconBg)"/>
   
-  <!-- Outer accent ring -->
-  <circle cx="512" cy="512" r="440" fill="none" stroke="#334155" stroke-width="18"/>
+  <!-- Mesh/Network geometric shape (PocketAI icon) -->
+  <!-- Left blue shape -->
+  <path d="M280 520 L360 420 L460 440 L380 560 Z" fill="#38bdf8"/>
+  <path d="M360 420 L460 440 L560 540 L420 560 Z" fill="#22d3ee"/>
   
-  <!-- Pocket shape (iconic, centered) -->
-  <path d="M512 760 L580 820 L684 820 L684 900 L340 900 L340 820 L444 820 Z" fill="#38bdf8" filter="url(#softShadow)"/>
+  <!-- Center tall spike -->
+  <path d="M500 260 L540 480 L620 480 L580 300 Z" fill="#38bdf8"/>
   
-  <!-- Phone device -->
-  <rect x="312" y="312" width="400" height="700" rx="88" fill="#1e293b" stroke="#334155" stroke-width="3"/>
-  <rect x="356" y="364" width="312" height="596" rx="52" fill="#020617"/>
+  <!-- Right purple shape -->
+  <path d="M540 320 L640 320 L740 480 L600 480 Z" fill="#c084fc"/>
+  <path d="M640 320 L740 480 L740 640 L580 640 Z" fill="#a855f7"/>
   
-  <!-- Screen content -->
-  <rect x="396" y="408" width="48" height="6" rx="3" fill="#22d3ee"/>
-  <rect x="458" y="408" width="30" height="6" rx="3" fill="#334155"/>
-  <rect x="396" y="448" width="150" height="44" rx="22" fill="#334155"/>
-  <rect x="396" y="504" width="190" height="44" rx="22" fill="#334155"/>
-  <rect x="440" y="560" width="130" height="40" rx="20" fill="#334155"/>
-  <rect x="396" y="612" width="210" height="48" rx="24" fill="#334155"/>
+  <!-- Bottom blue shape -->
+  <path d="M580 480 L680 640 L560 760 L460 640 Z" fill="#22d3ee"/>
+  <path d="M460 640 L560 760 L440 680 L360 580 L460 580 Z" fill="#38bdf8"/>
   
-  <!-- AI Core circle -->
-  <circle cx="512" cy="270" r="44" fill="#38bdf8" filter="url(#softShadow)"/>
-  <path d="M474 270 Q512 236 550 270 Q512 304 474 270" fill="none" stroke="#0f172a" stroke-width="10" stroke-linecap="round"/>
+  <!-- Bottom small purple triangle -->
+  <path d="M560 760 L640 760 L600 840 Z" fill="#a855f7"/>
   
-  <!-- "P" monogram subtle -->
-  <text x="512" y="880" font-family="system-ui, -apple-system, sans-serif" font-size="140" font-weight="900" fill="#22d3ee" text-anchor="middle" letter-spacing="-20">P</text>
+  <!-- Inner detail lines -->
+  <path d="M500 260 L580 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M360 420 L500 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M640 320 L580 480" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M580 480 L600 640" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
   
-  <!-- Subtle glow behind core -->
-  <circle cx="512" cy="270" r="60" fill="#38bdf8" opacity="0.3" filter="url(#softShadow)"/>
+  <!-- Central dot -->
+  <circle cx="512" cy="480" r="14" fill="#f1f5f9"/>
 </svg>

@@ -3,27 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PocketAI — Complete Setup Guide</title>
+<title>PocketAI — Phone-Ready GGUF Models</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0f1c; color: #f1f5f9; line-height: 1.8; }
   .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-  header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #0a0f1c 0%, #1e1b4b 100%); border-radius: 24px; margin-bottom: 2rem; }
-  .logo { width: 96px; height: 96px; margin-bottom: 1rem; filter: drop-shadow(0 0 25px rgba(34,211,238,0.35)); }
-  h1 { font-size: 3rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #22d3ee, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #0a0f1c 0%, #1e1b4b 100%); border-radius: 24px; margin-bottom: 2rem; position: relative; overflow: hidden; }
+  header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 50%); animation: rotate 20s linear infinite; z-index: 0; }
+  @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .logo { width: 100px; height: 100px; margin-bottom: 1rem; z-index: 1; position: relative; filter: drop-shadow(0 0 25px rgba(34,211,238,0.4)); }
+  h1 { font-size: 3rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #22d3ee, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 1; position: relative; }
   h2 { font-size: 1.75rem; margin-top: 3rem; color: #22d3ee; border-bottom: 2px solid #334155; padding-bottom: 0.5rem; }
-  h3 { font-size: 1.25rem; color: #818cf8; margin-top: 1.5rem; margin-bottom: 0.5rem; }
   p { color: #cbd5e1; margin-bottom: 1rem; }
-  .subtitle { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; }
-  
-  /* Alert boxes */
-  .alert { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0; }
-  .alert.warn { border-left: 4px solid #f59e0b; }
-  .alert.info { border-left: 4px solid #38bdf8; }
-  .alert.ok { border-left: 4px solid #22c55e; }
-  .alert.bad { border-left: 4px solid #ef4444; }
-  
-  .badges { display: flex; gap: 0.75rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; }
+  .subtitle { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2rem; z-index: 1; position: relative; }
+  .badges { display: flex; gap: 0.75rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; z-index: 1; position: relative; }
   .badge { padding: 0.5rem 1rem; border-radius: 20px; background: #1e293b; border: 1px solid #334155; color: #22d3ee; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: all 0.3s; }
   .badge:hover { background: #22d3ee; color: #0a0f1c; transform: translateY(-2px); }
   
@@ -37,7 +30,6 @@
   .download-btn { display: inline-block; background: #22d3ee; color: #0a0f1c; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; margin: 0.5rem; transition: all 0.3s; border: 2px solid transparent; }
   .download-btn:hover { background: #67e8f9; transform: translateY(-2px); box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
   .download-btn.secondary { background: transparent; color: #22d3ee; border-color: #22d3ee; }
-  .download-btn.secondary:hover { background: #22d3ee; color: #0a0f1c; }
   
   .step { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 1.5rem; margin: 1rem 0; }
   .step-num { display: inline-block; background: #38bdf8; color: #0a0f1c; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: 800; margin-right: 0.75rem; }
@@ -51,29 +43,27 @@
 
 <div class="container">
   <header>
-    <img src="https://raw.githubusercontent.com/junaidshah9826650092-cmyk/PocketModel-Lab/main/assets/icon.svg" alt="PocketAI" class="logo">
+    <img src="assets/icon.svg" alt="PocketAI" class="logo">
     <h1>PocketAI</h1>
     <p class="subtitle">Complete Step-by-Step Guide — Phone aur PC dono ke liye</p>
     <div class="badges">
-      <a href="#download" class="badge">Download Models</a>
-      <a href="#phone" class="badge">Android Setup</a>
-      <a href="#pc" class="badge">PC Setup</a>
-      <a href="#colab" class="badge">Colab Pipeline</a>
-      <a href="#troubleshoot" class="badge">Troubleshoot</a>
+      <a href="#download" class="badge">📥 Download Models</a>
+      <a href="#phone" class="badge">📱 Android Setup</a>
+      <a href="#pc" class="badge">💻 PC Setup</a>
+      <a href="#colab" class="badge">🖥️ Colab Pipeline</a>
+      <a href="#troubleshoot" class="badge">🔧 Troubleshoot</a>
     </div>
   </div>
 
-  <!-- INTRODUCTION -->
   <div class="section">
     <h2>1. PocketAI Kya Hai?</h2>
     <p>PocketAI ek <b>GGUF format model</b> hai jo aapke phone ya PC par <b>offline</b> chal sakta hai. Iska koi internet chahiye nahi baar-baar, sirf ek baar download kar lo phir kabhi bhi use kar sakte ho.</p>
-    <p>Ye Qwen3 architecture par based hai, lekin iska apna naam hai <b>PocketAI</b> (Ndx series). Sabse chhota model sirf <b>0.30 GB</b> ka hai jo budget phones par bhi aasaan se chalta hai.</p>
-    <div class="alert info">
+    <p>Ye Qwen3 architecture par based hai, lekin iska apna naam hai <b>PocketAI</b> (Ndx series). Sabse chhota model sirf <b>0.30 GB</b> ka hai jo budget phones par bhi asaani se chalta hai.</p>
+    <div class="alert">
       <b>Important:</strong> Ye model <b>quantized</b> hai, matlab iska size chhota rakha gaya hai taaki phone me asaani se chale. Lekin full 27B model (Titan) sirf PC/emulator par chalega, phone par nahi.
     </div>
   </div>
 
-  <!-- MODEL TABLE -->
   <div class="section">
     <h2>2. Apne Phone Ke Hisaab Se Model Chunein</h2>
     <table>
@@ -92,7 +82,6 @@
     <p><b>Salah:</strong> Agar aapka phone 3 GB RAM ka hai, toh <b>PocketAI-Kilo</strong> lein. Agar 6 GB ya usse upar hai, toh <b>PocketAI-Mega</strong> ya <b>PocketAI-Giga</strong> lein.</p>
   </div>
 
-  <!-- DOWNLOAD SECTION -->
   <div class="download-section" id="download">
     <h2>3. Model Download Kaise Karein (Bina Command Ke)</h2>
     <p>Sabse aasaan tareeka — apne phone ke browser mein link par tap karo, file download ho jayegi. Koi terminal, koi command nahi.</p>
@@ -101,10 +90,9 @@
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-Ndx-Q4_K_M.gguf" class="download-btn">PocketAI-Mega (0.44 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-Ndx-IQ2_M.gguf" class="download-btn secondary">PocketAI-Giga (0.75 GB)</a>
     <a href="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-Ndx-Q4_K_M.gguf" class="download-btn secondary">PocketAI-Giga-HD (1.16 GB)</a>
-    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">Ye sab GitHub Release <strong>pocket-v1.0</strong> se link karke liye gaye hain.</p>
+    <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.9rem;">Tip: Use <code>releases/latest/download/</code> to always get the newest build.</p>
   </div>
 
-  <!-- PHONE SETUP -->
   <div class="section" id="phone">
     <h2>4. Android Phone Par Kaise Chalayein</h2>
     <div class="step"><span class="step-num">Step 1</span><b>App Install Karein</strong></div>
@@ -125,7 +113,6 @@
     <p>Model select karo, message type karo, Send dabao. Qwen3 model ke liye tezi se jawab chahiye toh prompt mein <b>/no_think</strong> likh sakte ho.</p>
   </div>
 
-  <!-- PC SETUP -->
   <div class="section" id="pc">
     <h2>5. Desktop PC (Windows / Mac / Linux) Par Kaise Chalayein</h2>
     <div class="step"><span class="step-num">Step 1</span><b>App Install Karein</strong></div>
@@ -140,13 +127,12 @@
     <p>Model load hone ke baad chat shuru karo. PC par ye chalega bina kisi internet ke.</p>
   </div>
 
-  <!-- COLAB SETUP -->
   <div class="section" id="colab">
     <h2>6. Google Colab Pe Model Banana (Agar Apna Model Banana Ho)</h2>
     <p>Agar aap apna custom model banana chahte ho, toh Colab notebook use karo:</p>
     <div class="step"><span class="step-num">Step 1</span><b>Notebook Upload Karein</strong></div>
     <p>Colab mein <b>File → Upload notebook</strong> karo → <b>pocketmodel_colab_cpu.ipynb</strong> select karo.</p>
-    <div class="step"><span="step-num">Step 2</span><b>Runtime Set Karein</strong></div>
+    <div class="step"><span class="step-num">Step 2</span><b>Runtime Set Karein</strong></div>
     <p><b>Runtime → Change runtime type → T4 GPU → Save</strong></div>
     <div class="step"><span class="step-num">Step 3</span><b>Cells Run Karein</strong></div>
     <p>Cells <b>1 se 6</strong> kram mein run karo:</p>
@@ -158,14 +144,10 @@
       <li>Cell 5: Repo files taiyar karna</li>
       <li>Cell 6: GitHub push + HuggingFace upload</li>
     </ul>
-    <div class="alert warn">
-      <b>Dhyan rakhein:</strong> Cell 3 thoda slow chalta hai (CPU par). Isse band na karein. Agar error aaye toh screenshot bhejein.
-    </div>
   </div>
 
-  <!-- ENV SETUP -->
   <div class="section">
-    <h2>7. .env File Kaise Banayein (Token Ke Liye)</strong></h2>
+    <h2>7. .env File Kaise Banayein</strong></h2>
     <p>Apne tokens ek saath rakhne ke liye <b>.env</strong> file banayein:</p>
     <div class="code">
 GH_REPO=junaidshah9826650092-cmyk/PocketModel-Lab<br>
@@ -176,15 +158,8 @@ GEMINI_WEB2API_URL=http://localhost:5000<br>
 NVIDIA_API_KEY=nvapi_your_nvidia_key_here<br>
 OPENROUTER_API_KEY=sk-or-your_openrouter_key_here
     </div>
-    <div class="alert info">
-      <b>Token kahan se milega:</strong><br>
-      • GitHub PAT: https://github.com/settings/tokens<br>
-      • HF Token: https://huggingface.co/settings/tokens<br>
-      • Gemini API: https://aistudio.google.com/app/apikey
-    </div>
   </div>
 
-  <!-- TROUBLESHOOT -->
   <div class="section" id="troubleshoot">
     <h2>8. Common Problems aur Unka Solution</strong></h2>
     <table>
@@ -197,19 +172,6 @@ OPENROUTER_API_KEY=sk-or-your_openrouter_key_here
         <tr><td>Colab GPU nahi mil raha</td><td>Runtime → Change runtime type → T4 GPU → Save. Agar quota khatam ho toh 24 ghante baad try karein.</td></tr>
       </tbody>
     </table>
-  </div>
-
-  <!-- FAQ -->
-  <div class="section">
-    <h2>9. Aksar Pooche Jane Wale Sawal (FAQ)</strong></h2>
-    <p><b>Q: Kya ye model offline chalega?</strong><br>
-    A: Haan, ek baar download karne ke baad internet ki zaroorat nahi padti.</p>
-    <p><b>Q: Kya ek hi model phone aur PC dono par chalega?</strong><br>
-    A: Haan, GGUF format ek hi file sab jagah chalti hai.</p>
-    <p><b>Q: Titan model phone par chalega?</strong><br>
-    A: Nahi, Titan 27B model sirf PC/emulator par chalega.</p>
-    <p><b>Q: Model ka naam kya hoga?</strong><br>
-    A: PocketAI (Ndx series). System prompt mein aap apna naam de sakte ho.</p>
   </div>
 
   <div class="footer">
