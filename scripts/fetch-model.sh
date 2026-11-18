@@ -4,11 +4,11 @@ set -e
 tier="${1:-kilo}"
 base="https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/latest/download"
 case "$tier" in
-  kilo)        f="PocketAI-Kilo-qwen3-0.6B-IQ2_M.gguf";;
-  kilo-hd)     f="PocketAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf";;
-  mega)        f="PocketAI-Mega-qwen3-0.6B-Q4_K_M.gguf";;
-  giga)        f="PocketAI-Giga-qwen3-1.7B-IQ2_M.gguf";;
-  giga-hd)     f="PocketAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf";;
+  kilo)        f="PocketAI-Kilo-Ndx-IQ2_M.gguf";;
+  kilo-hd)     f="PocketAI-KiloHD-Ndx-Q3_K_M.gguf";;
+  mega)        f="PocketAI-Mega-Ndx-Q4_K_M.gguf";;
+  giga)        f="PocketAI-Giga-Ndx-IQ2_M.gguf";;
+  giga-hd)     f="PocketAI-GigaHD-Ndx-Q4_K_M.gguf";;
   titan)       echo "Titan (27B, ~10-12 GB) lives on Hugging Face - see README.md"; exit 0;;
   *)           echo "unknown tier: $tier"; exit 1;;
 esac

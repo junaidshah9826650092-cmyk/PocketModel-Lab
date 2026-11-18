@@ -8,11 +8,11 @@ Open your phone browser and tap one link:
 
 | Phone RAM | Build | Download |
 |---|---|---|
-| 2–3 GB (budget) | PocketAI-Kilo (0.30 GB) | [PocketAI-Kilo](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-qwen3-0.6B-IQ2_M.gguf) |
-| 2–4 GB (low-end) | PocketAI-Kilo-HD (0.38 GB) | [PocketAI-Kilo-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-KiloHD-qwen3-0.6B-Q3_K_M.gguf) |
-| 4–6 GB (mid) | PocketAI-Mega (0.44 GB) | [PocketAI-Mega](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-qwen3-0.6B-Q4_K_M.gguf) |
-| 6–8 GB (upper-mid) | PocketAI-Giga (0.75 GB) | [PocketAI-Giga](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-qwen3-1.7B-IQ2_M.gguf) |
-| 8 GB+ (flagship) | PocketAI-Giga-HD (1.16 GB) | [PocketAI-Giga-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-qwen3-1.7B-Q4_K_M.gguf) |
+| 2–3 GB (budget) | PocketAI-Kilo (0.30 GB) | [PocketAI-Kilo](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Kilo-Ndx-IQ2_M.gguf) |
+| 2–4 GB (low-end) | PocketAI-Kilo-HD (0.38 GB) | [PocketAI-Kilo-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-KiloHD-Ndx-Q3_K_M.gguf) |
+| 4–6 GB (mid) | PocketAI-Mega (0.44 GB) | [PocketAI-Mega](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Mega-Ndx-Q4_K_M.gguf) |
+| 6–8 GB (upper-mid) | PocketAI-Giga (0.75 GB) | [PocketAI-Giga](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-Giga-Ndx-IQ2_M.gguf) |
+| 8 GB+ (flagship) | PocketAI-Giga-HD (1.16 GB) | [PocketAI-Giga-HD](https://github.com/junaidshah9826650092-cmyk/PocketModel-Lab/releases/download/pocket-v1.0/PocketAI-GigaHD-Ndx-Q4_K_M.gguf) |
 
 File lands in **Downloads/**.
 
